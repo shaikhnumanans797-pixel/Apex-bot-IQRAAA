@@ -985,8 +985,8 @@ function checkStrictAgreement(ind) {
   const neutrals  = votes.filter(v=>v==='NEUTRAL').length;
 
   // Require at least 4 out of 5 agreeing (strict confluence)
-  if(bullVotes >= 3) return { direction:'BUY',  agreement: bullVotes, checks };
-  if(bearVotes >= 3) return { direction:'SELL', agreement: bearVotes, checks };
+  if(bullVotes >= 2) return { direction:'BUY',  agreement: bullVotes, checks };
+  if(bearVotes >= 2) return { direction:'SELL', agreement: bearVotes, checks };
   return { direction:'HOLD', agreement: Math.max(bullVotes, bearVotes), checks };
 }
 
